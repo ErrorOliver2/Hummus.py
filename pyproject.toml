@@ -4,5 +4,18 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "Hummus.py"
+version = "1.0.0"
+description = "An asynchronous and semi-decorationless (lol) API wrapper for Hummus, a Discord 2016 revival by Ziad87."
 authors = [{name = "LG125YT", email = "lg125yt@gmail.com"}]
-dynamic = ["1.0.0", "An asynchronous and semi-decorationless (lol) API wrapper for Hummus, a Discord 2016 revival by Ziad87."]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "requests"
+    "fake-useragent"
+    "aiohttp",
+    "requests_toolbelt",
+    "pillow",
+    "aiohttp",
+    "filetype",
+    "websockets"
+]

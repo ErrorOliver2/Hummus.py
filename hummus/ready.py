@@ -31,7 +31,7 @@ class Ready:
 class Self(User):
 	def __init__(self,data,instance):
 		super().__init__(data,instance)
-		self.email:str = data['email']
+		self.email:str = data.get('email', "") # optional
 		self.verified:bool = data['verified']
 		self.flags:int = data.get('flags')
 		self.mfa_enabled:bool = data.get('mfa_enabled')
@@ -50,5 +50,5 @@ class Application:
 		self.name:str = data['name']
 		self.description:str = data['description']
 		self.icon:Icon = Icon(data,"icon",instance,True)
-		self.bot_public:bool = data['bot_public']
-		self.bot_require_code_grant:bool = data['bot_require_code_grant']
+		self.bot_public:bool = data.get('bot_public', False) #default to False when keys missing
+		self.bot_require_code_grant:bool = data.get('bot_require_code_grant', False)

@@ -152,11 +152,18 @@ class Client:
 		else:
 		    raise TypeError("Commands must be of type Commands.")
 		self.s = requests.session()
+		# Required cookies
+		falcord_cookies = {
+			"default_client_build": "october_5_2017",
+			"legal_agreed": "true",
+			"release_date": "december_31_2018"
+		}
+		self.s.cookies.update(falcord_cookies)
 		self.s.headers = {"Authorization":token,"Content-Type":"application/json","User-Agent":agent}
 		self.http:HTTP = HTTP(self)
 		if not url.endswith("/"):
 			url = url + "/"
-		e = requests.get(url+"gateway",headers={"User-Agent":agent})
+		e = self.s.get(url+"gateway")
 		if e.json().get('url'):
 			self.websocket = e.json()['url']+"?api=v6&encoding=json"
 			if not self.websocket.startswith("wss://"):
