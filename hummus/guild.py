@@ -261,7 +261,7 @@ class Channel(PartialChannel):
 		from .user import User
 		super().__init__(data,data.get('guild_id'),instance)
 		self.instance = instance
-		self.guild_id:Union[str,None] = data.get('guild_id') # Use .get() instead of direct access
+		self.guild_id:Union[str,None] = data.get('guild_id')
 		self.last_message_id:Union[str,None] = data.get('last_message_id') #text-based
 		self.topic:Union[str,None] = data.get('topic') #text
 		self.nsfw:Union[bool,None] = bool(data.get('nsfw')) #text
@@ -273,11 +273,11 @@ class Channel(PartialChannel):
 			self.permission_overwrites:list[PermissionOverwrite] = [PermissionOverwrite(overwrite) for overwrite in data['permission_overwrites']]
 			self.position:int = data['position']
 		if data['type'] == 3:
-			# Use .get() to default to an empty list if 'recipients' is missing
+			# defaults to an empty list if 'recipients' is missing
 			self.recipients:list[User] = [User(d,instance) for d in data.get('recipients', [])]
 			self.icon:Icon = Icon(data,"icon",self.instance)
 		if data['type'] == 1:
-			# Apply the same fix for Type 1 (DMs)
+			# Type 1 (DMs)
 			self.recipients:list[User] = [User(d,instance) for d in data.get('recipients', [])]
 
 	async def getFull(self) -> 'Channel': #not needed as it will just return this object again
