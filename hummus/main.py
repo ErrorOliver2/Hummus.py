@@ -137,7 +137,7 @@ default_settings = ClientSettings()
 default_status = CustomStatus(type=0)
 
 class Client:
-	def __init__(self,token,commands:Union[Commands,None]=None,url="https://hummus.sys42.net/api/v6/",cdn=None,custom_status:CustomStatus=default_status,exception_handler:CustomizableExceptions=default_exceptions,settings:ClientSettings=default_settings):
+	def __init__(self,token,commands:Union[Commands,None]=None,url="https://falcord.ixchats.com/api/v6/",cdn=None,custom_status:CustomStatus=default_status,exception_handler:CustomizableExceptions=default_exceptions,settings:ClientSettings=default_settings):
 		self.websocket = ""
 		self.ping = None
 		self.state:Ready = None #type:ignore

@@ -27,7 +27,7 @@ The version of Hummus.py, ex: `'1.0.0'`.
 class hummus.Client(
     token : str,
     commands : Commands = None,
-    url : str = "https://hummus.sys42.net/api/v6/",
+    url : str = "https://falcord.ixchats.com/api/v6/",
     cdn : str = None,
     custom_status : CustomStatus = default_status,
     exception_handler : CustomizableExceptions = default_exceptions,

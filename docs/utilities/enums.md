@@ -57,11 +57,11 @@ There are 4 channel types:
 Access these enums through `Enums.DefaultAvatars`. These are the different default avatars available on Hummus.
 
 - `all` (contains a tuple of all 5 default avatars, already sorted so you can determine the avatar from the discriminator: `DefaultAvatars.all[int(User.discriminator) % 5]`)
-- `blue` (value of `"https://hummus.sys42.net/assets/6debd47ed13483642cf09e832ed0bc1b.png"`)
-- `gray` (value of `"https://hummus.sys42.net/assets/322c936a8c8be1b803cd94861bdfa868.png"`)
-- `green` (value of `"https://hummus.sys42.net/assets/dd4dbc0016779df1378e7812eabaa04d.png"`)
-- `yellow` (value of `"https://hummus.sys42.net/assets/0e291f67c9274a1abdddeb3fd919cbaa.png"`)
-- `red` (value of `"https://hummus.sys42.net/assets/1cbd08c76f8af6dddce02c5138971129.png"`)
+- `blue` (value of `"https://falcord.ixchats.com/assets/6debd47ed13483642cf09e832ed0bc1b.png"`)
+- `gray` (value of `"https://falcord.ixchats.com/assets/322c936a8c8be1b803cd94861bdfa868.png"`)
+- `green` (value of `"https://falcord.ixchats.com/assets/dd4dbc0016779df1378e7812eabaa04d.png"`)
+- `yellow` (value of `"https://falcord.ixchats.com/assets/0e291f67c9274a1abdddeb3fd919cbaa.png"`)
+- `red` (value of `"https://falcord.ixchats.com/assets/1cbd08c76f8af6dddce02c5138971129.png"`)
 
 ## Permissions
 
